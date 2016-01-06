@@ -1,0 +1,34 @@
+def matplotlibTest():
+    matplotlib.style.use(r'D:\matplotlibrc')
+    
+    d = np.random.randn(1000, 7)
+    for k in range(7):
+        d[:,k] += k*5
+    plt.clf()
+    plt.plot(d); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.legend(['Item 1','Item 1','Item 1','Item 1','Item 1','Item 1','Item 1'])
+    plt.savefig('results - plot.png')
+    
+    import matplotlib.image as mpimg
+    img=mpimg.imread(r'http://www.artfaircalendar.com/.a/6a00e54fba8a73883301bb082e7811970d-pi')
+    plt.clf()
+    plt.imshow(img);  plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.savefig('results - imshow.png')
+    
+    plt.clf()
+    r = img[:,:,0]; g = img[:,:,1]; b = img[:,:,2]; 
+    plt.subplot(3,1,1)
+    plt.suptitle('Sup Title')
+    plt.imshow(r); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.subplot(3,1,2); plt.imshow(g); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.subplot(3,1,3); plt.imshow(b); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.savefig('results - subplot imshow grayscale long.png')
+    
+    plt.clf()
+    r = img[:,:,0]; g = img[:,:,1]; b = img[:,:,2]; 
+    plt.subplot(1,3,1)
+    plt.suptitle('Sup Title')
+    plt.imshow(r); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.subplot(1,3,2); plt.imshow(g); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.subplot(1,3,3); plt.imshow(b); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.savefig('results - subplot imshow grayscale wide.png')    
