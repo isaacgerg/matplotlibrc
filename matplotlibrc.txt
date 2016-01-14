@@ -29,7 +29,7 @@
 # You can also deploy your own backend outside of matplotlib by
 # referring to the module name (which must be in the PYTHONPATH) as
 # 'module://my_backend'
-backend      : Qt4Agg
+backend      : Qt5Agg
 
 # If you are using the Qt4Agg backend, you can choose here
 # to use the PyQt4 bindings or the newer PySide bindings to
@@ -215,14 +215,14 @@ mathtext.fontset : cm # Should be 'cm' (Computer Modern), 'stix',
 # default fontsizes for ticklabels, and so on.  See
 # http://matplotlib.org/api/axes_api.html#module-matplotlib.axes
 #axes.hold           : True    # whether to clear the axes by default on
-axes.facecolor      : eeeeee   # axes background color
+axes.facecolor      : white   # axes background color
 axes.edgecolor      : bcbcbc   # axes edge color
 #axes.linewidth      : 1.0     # edge linewidth
 axes.grid           : True   # display grid or not
 axes.titlesize      : large   # fontsize of the axes title
 axes.titleweight   : bold
 axes.labelsize      : small  # fontsize of the x any y labels
-axes.labelweight    : bold  # weight of the x and y labels
+axes.labelweight    : normal  # weight of the x and y labels
 #axes.labelcolor     : white
 #axes.axisbelow      : False   # whether axis gridlines and ticks are below
                               # the axes elements (lines, text, etc)
@@ -303,7 +303,7 @@ legend.fancybox      : True  # if True, use a rounded box for the
 # See http://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure
 figure.figsize   : 16, 8    # figure size in inches
 figure.dpi       : 100     # figure dots per inch
-figure.facecolor : 0.0    # figure facecolor; 0.75 is scalar gray
+figure.facecolor : 1.0    # figure facecolor; 0.75 is scalar gray
 #figure.edgecolor : white   # figure edgecolor
 figure.autolayout : True  # When True, automatically adjust subplot
                             # parameters to make the plot fit the figure
@@ -353,10 +353,10 @@ image.origin : upper             # lower | upper
 # Eg, you may want a higher resolution, or to make the figure
 # background white
 savefig.dpi        : 300      # figure dots per inch
-savefig.facecolor  : eeeeee    # figure facecolor when saving
+savefig.facecolor  : white    # figure facecolor when saving
 savefig.format     : png      # png, ps, pdf, svg
 savefig.bbox       : tight # 'tight' or 'standard'.
-#savefig.pad_inches : 0.1      # Padding to be used when bbox is set to 'tight'
+savefig.pad_inches : 0.1      # Padding to be used when bbox is set to 'tight'
 
 # tk backend params
 #tk.window_focus   : False    # Maintain shell focus for TkAgg
