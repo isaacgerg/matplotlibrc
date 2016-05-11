@@ -76,7 +76,7 @@ lines.antialiased : True         # render lines in antialised (no jaggies)
 # http://matplotlib.org/api/artist_api.html#module-matplotlib.patches
 # information on patch properties
 patch.linewidth        : 0.5     # edge width in points
-patch.facecolor        : blue
+patch.facecolor        : 377EB8
 patch.edgecolor        : eeeeee
 patch.antialiased      : True  
 
@@ -219,8 +219,8 @@ axes.facecolor      : white   # axes background color
 axes.edgecolor      : bcbcbc   # axes edge color
 #axes.linewidth      : 1.0     # edge linewidth
 axes.grid           : True   # display grid or not
-axes.titlesize      : large   # fontsize of the axes title
-axes.titleweight   : bold
+axes.titlesize      : medium   # fontsize of the axes title
+axes.titleweight   : normal
 axes.labelsize      : small  # fontsize of the x any y labels
 axes.labelweight    : normal  # weight of the x and y labels
 #axes.labelcolor     : white
@@ -305,17 +305,19 @@ figure.figsize   : 16, 8    # figure size in inches
 figure.dpi       : 100     # figure dots per inch
 figure.facecolor : 1.0    # figure facecolor; 0.75 is scalar gray
 #figure.edgecolor : white   # figure edgecolor
-figure.autolayout : True  # When True, automatically adjust subplot
+figure.autolayout : False  # When True, automatically adjust subplot
                             # parameters to make the plot fit the figure
+figure.titlesize: large 
+figure.titleweight: bold
 
 # The figure subplot parameters.  All dimensions are a fraction of the
 # figure width or height
 #figure.subplot.left    : 0.125  # the left side of the subplots of the figure
 #figure.subplot.right   : 0.9    # the right side of the subplots of the figure
 #figure.subplot.bottom  : 0.1    # the bottom of the subplots of the figure
-#figure.subplot.top     : 0.9    # the top of the subplots of the figure
+figure.subplot.top     : 0.925    # the top of the subplots of the figure
 #figure.subplot.wspace  : 0.2    # the amount of width reserved for blank space between subplots
-#figure.subplot.hspace  : 0.2    # the amount of height reserved for white space between subplots
+figure.subplot.hspace  : 0.4    # the amount of height reserved for white space between subplots
 
 ### IMAGES
 image.aspect : equal             # equal | auto | a number
@@ -355,7 +357,7 @@ image.origin : upper             # lower | upper
 savefig.dpi        : 300      # figure dots per inch
 savefig.facecolor  : white    # figure facecolor when saving
 savefig.format     : png      # png, ps, pdf, svg
-savefig.bbox       : tight # 'tight' or 'standard'.
+savefig.bbox       : tight    # 'tight' or 'standard'.
 savefig.pad_inches : 0.1      # Padding to be used when bbox is set to 'tight'
 
 # tk backend params
