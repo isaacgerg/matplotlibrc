@@ -1,5 +1,8 @@
 def matplotlibTest():
-    matplotlib.style.use(r'D:\matplotlibrc')
+    import numpy as np
+    import matplotlib.style
+    import matplotlib.pyplot as plt
+    matplotlib.style.use(r'https://raw.githubusercontent.com/isaacgerg/matplotlibrc/master/matplotlibrc.txt')
     
     d = np.random.randn(1000, 7)
     for k in range(7):
@@ -15,20 +18,31 @@ def matplotlibTest():
     plt.imshow(img);  plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
     plt.savefig('results - imshow.png')
     
-    plt.clf()
-    r = img[:,:,0]; g = img[:,:,1]; b = img[:,:,2]; 
-    plt.subplot(3,1,1)
-    plt.suptitle('Sup Title')
-    plt.imshow(r); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
-    plt.subplot(3,1,2); plt.imshow(g); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
-    plt.subplot(3,1,3); plt.imshow(b); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.figure()
+    r = img[:,:,0]; g = img[:,:,1]; b = img[:,:,2];     
+    plt.subplot(3,1,1)        
+    plt.imshow(r); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title'); plt.colorbar()
+    plt.subplot(3,1,2); plt.imshow(g);  plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title'); plt.colorbar()
+    plt.subplot(3,1,3); plt.imshow(b); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title'); plt.colorbar()
+    plt.suptitle('Sup Title')    
     plt.savefig('results - subplot imshow grayscale long.png')
     
     plt.clf()
-    r = img[:,:,0]; g = img[:,:,1]; b = img[:,:,2]; 
     plt.subplot(1,3,1)
     plt.suptitle('Sup Title')
-    plt.imshow(r); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
-    plt.subplot(1,3,2); plt.imshow(g); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
-    plt.subplot(1,3,3); plt.imshow(b); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
-    plt.savefig('results - subplot imshow grayscale wide.png')    
+    plt.imshow(r); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title');
+    plt.subplot(1,3,2); plt.imshow(g); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title'); 
+    plt.subplot(1,3,3); plt.imshow(b); plt.colorbar(); plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title'); 
+    plt.savefig('results - subplot imshow grayscale wide.png')   
+    
+    plt.clf()
+    plt.bar(np.linspace(1,10, 10), np.linspace(1,10, 10))
+    plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.savefig('results - bar.png')   
+    
+    plt.clf()
+    plt.plot(np.random.randn(10), np.random.randn(10), '.')
+    plt.xlabel('xLabel [units]'); plt.ylabel('yLabel [units]'); plt.title('The Title')
+    plt.savefig('results - scatter.png')       
+    
+    return
